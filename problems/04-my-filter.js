@@ -17,10 +17,27 @@ let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
     return s.length > 3;
 });
 console.log(result2);      // ['choose', 'words', 'only']
+
+1. declare empty array
+2. iterate a loop from 0 to array.length
+3. declare an element to array[i]
+4. if callback with arg of element, if true, push to empty arr
+5. return empty arr
+
 *******************************************************************************/
 
 function myFilter(array, cb) {
-    // Your code here
+
+    let newArr = [];
+
+    for (let i = 0; i < array.length; i++) {
+        let el = array[i];
+
+        if (cb(el)) {
+            newArr.push(el)
+        }
+    }
+    return newArr;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
