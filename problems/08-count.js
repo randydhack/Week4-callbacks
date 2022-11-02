@@ -24,10 +24,21 @@ let result4 = count(['follow', 'the', 'yellow', 'brick', 'road'], function (str)
     return str.includes('x');
 });
 console.log(result4); // 0
+
 *******************************************************************************/
 
 function count(array, cb) {
-  // Your code here
+
+  let result = 0;
+
+  for (let i = 0 ; i < array.length; i++) {
+    let el = array[i];
+
+    if (cb(el)) {
+      result++;
+    }
+  }
+  return result;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
