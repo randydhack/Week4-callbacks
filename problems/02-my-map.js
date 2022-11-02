@@ -14,10 +14,22 @@ let result2 = myMap(['run', 'Forrest'], function (el) {
     return el.toUpperCase() + '!';
 });
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
+
+1. for loop that iterates from 0 to length of arr
+2. declare a var of ele and init to arr[i]
+3. declare var res with the value of cb passing in arg of el
+4. return res
 *******************************************************************************/
 
 function myMap(array, cb) {
-    // Your code here
+    let newArr = [];
+
+    for (let i = 0; i < array.length; i++) {
+        let ele = array[i];
+        let res = cb(ele);
+        newArr.push(res);
+    }
+    return newArr;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
