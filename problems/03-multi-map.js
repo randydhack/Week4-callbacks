@@ -20,9 +20,24 @@ let result3 = multiMap("hi", 5, function(s) {
 });
 console.log(result3); // hi!!!!!
 *******************************************************************************/
+/*
+declare an empty data type (undefined)
+use a for loop from 0 to n
+  call the cb with value as an arg which reassigns the current value
+  store the value to the empty data type
+return result
+*/
+
 
 function multiMap(val, n, cb) {
   // Your code here
+  let res;
+
+  for (let i = 0; i < n; i++) {
+    val = cb(val);
+    res = val
+  }
+  return res
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
