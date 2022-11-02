@@ -26,7 +26,7 @@ function myEvery(array, cb) {
     for (let i = 0; i < array.length; i++) {
         let el = array[i];
 
-        if (!cb(el)) {
+        if (cb(el) === false) {
             return false;
         }
     }
