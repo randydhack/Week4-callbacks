@@ -22,9 +22,24 @@ let result3 = mySome(['soup', 'noodles', 'bike', 'ship'], function(ele) {
 });
 console.log(result3);   // true
 *******************************************************************************/
-
+/*
+create a generic for loop
+    declare variable ele to array[i]
+    declare if statement with cb of arg el,i, array
+        if everything is true
+            return true
+return false
+*/
 function mySome(array, cb) {
     // Your code here
+    for (let i  = 0; i < array.length; i++) {
+        let ele = array[i];
+
+        if (cb(ele, i , array)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
