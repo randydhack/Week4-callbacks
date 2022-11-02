@@ -41,9 +41,29 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - What do you expect each callback function to be returning?
 - How many times are you calling each callback function?
 *******************************************************************************/
-
+/*
+declare a new arr called res
+iterate through the array using a for loop from 0 - array.length
+    deckare an ele to array[i]
+    if statement that calls back selector contains arg of el, i, array
+        if true, push to new arr with mapper containg el,i, array
+        if not true, push in the ele
+return result
+*/
 function selectiveMap(array, selector, mapper) {
     // Your code here
+    let res = [];
+
+    for (let i = 0; i < array.length; i++) {
+        let ele = array[i];
+
+        if (selector(ele, i, array)) {
+            res.push(mapper(ele, i, array));
+        } else {
+            res.push(ele);
+        }
+    }
+    return res;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
