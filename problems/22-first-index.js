@@ -25,9 +25,11 @@ console.log(result3); // -1
 function firstIndex(array, cb) {
 
   for (let i = 0; i < array.length; i++) {
+    // let el = array[i];
 
     if (cb(array[i])) {
       return array.indexOf(array[i]);
+      // return i;
     }
   }
   return -1;

@@ -39,18 +39,16 @@ console.log(result6);   // true
 
 function one(array, cb) {
 
-    for (let i = 0; i < array.length; i++) {
-        if (cb(array[i], i)) { // statement is true; check for a duplicate
+      let count = 0;
 
-            for (let j = i + 1; j < array.length; j++) { // loops through from i + 1
-                if (cb(array[i]) === cb(array[j])) { // if array[i] === array[j] return false
-                    return false;
-                }
-            }
-            return true; // if everything inside is not false, return true;
-        }
+  for (let i = 0; i < array.length; i++) {
+    let el = array[i];
+
+    if (cb(el, i)) {
+      count++;
     }
-    return false; // if inside = true, return false;
+  }
+  return count === 1;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

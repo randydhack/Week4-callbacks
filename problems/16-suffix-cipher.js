@@ -39,7 +39,7 @@ function suffixCipher(sentence, cipher) {
   // for (let key in cipher) {
   //   let value = cipher[key];
 
-  //   if (words[i].includes(key)) {
+  //   if (words[i].endsWith(key)) {
   //     words[i] = value(words[i])
   //     }
   //   }
@@ -50,7 +50,7 @@ function suffixCipher(sentence, cipher) {
     for (let key in cipher) {
       let value = cipher[key];
 
-      if (words[i].includes(key)) {
+      if (words[i].endsWith(key)) {
         words[i] = value(words[i])
       }
     }

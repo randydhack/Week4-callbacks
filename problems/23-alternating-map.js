@@ -38,12 +38,22 @@ console.log(alternatingMap(['hEy', 'EVERYone', 'whats', 'uP??'], yell, whisper))
 function alternatingMap(array, cb1, cb2) {
   let newArr = [];
 
-  for (let i = 0; i < array.length; i+=2) { // iterate from 0 to length and increment by 2 each loop
-    newArr.push(cb1(array[i])); // push index 0, index 2
+  // for (let i = 0; i < array.length; i+=2) { // iterate from 0 to length and increment by 2 each loop
+  //   newArr.push(cb1(array[i])); // push index 0, index 2
 
-    for (let j = i + 1; j < array.length; j++) { // iterate from the index 1 to array length and increment by 1
-      newArr.push(cb2(array[j])); // push index 1, and 4
-      break; // stop loop when it pushes the once and restart from the first forloop
+  //   for (let j = i + 1; j < array.length; j++) { // iterate from the index 1 to array length and increment by 1
+  //     newArr.push(cb2(array[j])); // push index 1, and 4
+  //     break; // stop loop when it pushes the once and restart from the first for loop
+  //   }
+  // }
+
+  for (let i = 0; i < array.length; i++) {
+    let el = array[i];
+
+    if (i % 2 === 0) {
+      newArr.push(cb1(el));
+    } else {
+      newArr.push(cb2(el));
     }
   }
   return newArr;

@@ -40,12 +40,11 @@ function mySimpleReduce(array, cb) {
   let prev = array[0]; // set the first value at index 0 so u can add the next index inside the loop
 
   for (let i = 1; i < array.length; i++) { // start loop from index 1 so u can add prev
-
     let curr = array[i]; // set curr value at index i
     prev = cb(prev,curr); // array[0] = cb(array[0],array[i]) -> [5, 3, 2, 4] -> 5+3 -> 8+2 -> 10+4
-    total = prev; // reassign prev to sum every time u iterate --> total = 8, 10, 14
+    // reassign prev to sum every time u iterate --> total = 8, 10, 14
   }
-  return total; // return total
+  return prev; // return total
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
