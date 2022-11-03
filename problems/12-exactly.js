@@ -31,19 +31,25 @@ function exactly(array, num, cb) {
 
   let count = 0;
 
-  for (let i = 0; i < array.length; i++) {
-    let el = array[i];
+  // for (let i = 0; i < array.length; i++) {
+  //   let el = array[i];
 
-    if (cb(el, i, array)) {
+  //   if (cb(el, i, array)) {
+  //     count++;
+  //   }
+  // }
+
+  array.forEach((ele, i, arr) => {
+    if (cb(ele, i, arr)) {
       count++;
     }
-  }
+  })
   return count === num;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = exactly;
-} catch(e) {
+} catch (e) {
   return null;
 }

@@ -25,17 +25,16 @@ function atMost(array, max, cb) {
   // Your code here
   let count = 0;
 
-  for (let i = 0; i < array.length; i++) {
-    let el = array[i];
+  // for (let i = 0; i < array.length; i++) {
+  //   let el = array[i];
 
-    if (cb(el)) {
-      count++
-    }
-  }
-  if (count > max) {
-    return false;
-  }
-  return true;
+  //   if (cb(el)) {
+  //     count++
+  //   }
+  // }
+  array.forEach(el => { if (cb(el)) { count++; } });
+
+  if (count > max) return false; return true;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

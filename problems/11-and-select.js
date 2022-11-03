@@ -34,20 +34,26 @@ function andSelect(array, cb1, cb2) {
   // Your code here
   let newArr = [];
 
-  for (let i = 0; i < array.length; i++) {
-    let el = array[i];
+  // for (let i = 0; i < array.length; i++) {
+  //   let el = array[i];
 
-    if (cb1(el) && cb2(el)) {
-          newArr.push(el);
+  //   if (cb1(el) && cb2(el)) {
+  //         newArr.push(el);
+  //   }
+  // }
+
+  array.forEach((ele) => {
+    if (cb1(ele) && cb2(ele)) {
+      newArr.push(ele);
     }
-  }
-return newArr;
+  });
+  return newArr
 }
 
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
   module.exports = andSelect;
-} catch(e) {
+} catch (e) {
   return null;
 }

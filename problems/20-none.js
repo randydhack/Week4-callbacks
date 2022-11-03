@@ -37,6 +37,7 @@ function none(array, cb) {
       return false;
     }
   }
+
   return true;
 }
 

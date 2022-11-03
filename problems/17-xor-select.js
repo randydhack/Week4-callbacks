@@ -34,15 +34,19 @@ let xorSelect = function(array, cb1, cb2) {
 
   let res = [];
 
-  for (let i = 0; i < array.length; i++) {
-    let el = array[i];
-    let val1 = cb1(el);
-    let val2 = cb2(el);
+  // for (let i = 0; i < array.length; i++) {
+  //   let el = array[i];
 
-    if ((val1 || val2) && !(val1 && val2)) {
+  //   if ((cb1(el) || cb2(el)) && !(cb1(el) && cb2(el))) {
+  //     res.push(el)
+  //   }
+  // }
+
+  array.forEach((el, i, array) => {
+    if ((cb1(el) || cb2(el)) && !(cb1(el) && cb2(el))) {
       res.push(el)
     }
-  }
+  });
   return res;
 };
 
