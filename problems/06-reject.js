@@ -30,16 +30,19 @@ console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth'
 *******************************************************************************/
 
 function reject(array, cb) {
-  // Your code here
+
   let res = [];
 
-  for (let i =0; i < array.length; i++) {
-    let el = array[i];
+  // for (let i = 0; i < array.length; i++) {
+  //   let el = array[i];
 
-    if (!cb(el)) {
-      res.push(el);
-    }
-  }
+  //   if (!cb(el)) {
+  //     res.push(el);
+  //   }
+  // }
+
+  array.forEach((e, i, arr) => { if (!cb(e, i, arr)) { res.push(e) }});
+
   return res;
 }
 

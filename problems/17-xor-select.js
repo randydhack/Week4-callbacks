@@ -16,7 +16,6 @@ let isPositive = function(n) {
 console.log(xorSelect([-2, -1, 1, 2, 3, 4], isEven, isPositive));
 // [ -2, 1, 3 ]
 
-
 let longString = function(s) {
   return s.length > 4;
 };
@@ -32,7 +31,19 @@ console.log(
 *******************************************************************************/
 
 let xorSelect = function(array, cb1, cb2) {
-  // Your code here
+
+  let res = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let el = array[i];
+    let val1 = cb1(el);
+    let val2 = cb2(el);
+
+    if ((val1 || val2) && !(val1 && val2)) {
+      res.push(el)
+    }
+  }
+  return res;
 };
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

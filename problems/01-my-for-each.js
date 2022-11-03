@@ -33,7 +33,8 @@ function myForEach(array, cb) {
 
         cb(el, i);
     }
-// hello jon
+
+
 
 }
 

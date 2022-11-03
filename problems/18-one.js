@@ -38,7 +38,25 @@ console.log(result6);   // true
 *******************************************************************************/
 
 function one(array, cb) {
-  // Your code here
+
+    for (let i = 0; i < array.length; i++) {
+        if (cb(array[i], i)) { // statement is true; check for a duplicate
+            console.log(array[i])
+
+            for (let j = i + 1; j < array.length; j++) { // loops through from i + 1
+                console.log(array,'dsd')
+
+                if (cb(array[i]) === cb(array[j])) { // if array[i] === array[j] return false
+                    console.log('false')
+                    return false;
+                }
+            }
+            console.log('true')
+            return true; // if everything inside is not false, return true;
+        }
+    }
+    return false; // if inside = true, return false;
+
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

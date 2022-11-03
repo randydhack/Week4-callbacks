@@ -40,11 +40,12 @@ function mySome(array, cb) {
         }
     }
     return false;
+
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
     module.exports = mySome;
-} catch(e) {
+} catch (e) {
     return null;
 }

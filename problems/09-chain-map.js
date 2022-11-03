@@ -34,7 +34,7 @@ function chainMap(val, ...callbacks) {
   let res = val
   for (let i = 0; i < callbacks.length; i++) {
     let ele = callbacks[i];
-    
+
     res = ele(res)
   }
   return res;
