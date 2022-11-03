@@ -31,13 +31,19 @@ function count(array, cb) {
 
   let result = 0;
 
-  for (let i = 0 ; i < array.length; i++) {
-    let el = array[i];
+  // for (let i = 0 ; i < array.length; i++) {
+  //   let el = array[i];
 
-    if (cb(el)) {
+  //   if (cb(el)) {
+  //     result++;
+  //   }
+  // }
+
+  array.forEach((ele, i) => {
+    if (cb(ele)) {
       result++;
     }
-  }
+  });
   return result;
 }
 

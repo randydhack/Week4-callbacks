@@ -20,12 +20,14 @@ console.log(arr2); // [ 0, 9, 20 ]
 
 function mapMutator(array, cb) {
 
-  for (let i = 0; i < array.length; i++) {
-    let el = array[i];
-    let res = cb(el, i, array);
+  // for (let i = 0; i < array.length; i++) {
+  //   let el = array[i];
+  //   let res = cb(el, i, array);
 
-    array[i] = res;
-  }
+  //   array[i] = res;
+  // }
+
+  array.map((ele, i) => array[i] = cb(ele,i,array));
 
   return array;
 }

@@ -51,17 +51,14 @@ iterate through the array using a for loop from 0 - array.length
 return result
 */
 function selectiveMap(array, selector, mapper) {
-    // Your code here
+
     let res = [];
 
     for (let i = 0; i < array.length; i++) {
         let ele = array[i];
 
-        if (selector(ele, i, array)) {
-            res.push(mapper(ele, i, array));
-        } else {
-            res.push(ele);
-        }
+        selector(ele, i, array) ? res.push(mapper(ele, i, array)) : res.push(ele); // if (this) ? do this : else do this
+
     }
     return res;
 }

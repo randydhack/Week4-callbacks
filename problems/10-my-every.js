@@ -30,6 +30,7 @@ function myEvery(array, cb) {
             return false;
         }
     }
+
     return true;
 }
 

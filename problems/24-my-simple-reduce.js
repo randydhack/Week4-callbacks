@@ -43,6 +43,16 @@ function mySimpleReduce(array, cb) {
     previous = cb(previous, current);
   }
   return previous;
+
+  // let total = 0; // total comes here
+  // let prev = array[0]; // set the first value at index 0 so u can add the next index inside the loop
+
+  // for (let i = 1; i < array.length; i++) { // start loop from index 1 so u can add prev
+  //   let curr = array[i]; // set curr value at index i
+  //   prev = cb(prev,curr); // array[0] = cb(array[0],array[i]) -> [5, 3, 2, 4] -> 5+3 -> 8+2 -> 10+4
+  //   // reassign prev to sum every time u iterate --> total = 8, 10, 14
+  // }
+  // return prev; // return total
 }
 
 //  let res =  array.reduce(function(el, i, array){
@@ -52,21 +62,21 @@ function mySimpleReduce(array, cb) {
 //   // return res;
 // }
 
-let result1 = mySimpleReduce([5, 3, 2, 4], function(sum, el) {
+let result1 = mySimpleReduce([5, 3, 2, 4], function (sum, el) {
   return sum + el;
 });
 console.log(result1); // 14
 
-let result2 = mySimpleReduce([4, 6, 2], function(product, el) {
+let result2 = mySimpleReduce([4, 6, 2], function (product, el) {
   return product * el;
 });
 console.log(result2); // 48
 
-let result3 = mySimpleReduce([4, 6, 2, 8, 3], function(max, el) {
+let result3 = mySimpleReduce([4, 6, 2, 8, 3], function (max, el) {
   if (el > max) {
-      return el;
+    return el;
   } else {
-      return max;
+    return max;
   }
 });
 console.log(result3); // 8

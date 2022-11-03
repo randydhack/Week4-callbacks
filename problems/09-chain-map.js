@@ -32,11 +32,13 @@ console.log(chainMap(4, half, square));         // 4
 function chainMap(val, ...callbacks) {
   // Your code here
   let res = val
-  for (let i = 0; i < callbacks.length; i++) {
-    let ele = callbacks[i];
-    
-    res = ele(res)
-  }
+  // for (let i = 0; i < callbacks.length; i++) {
+  //   let ele = callbacks[i];
+
+  //   res = ele(res)
+  // }
+
+  callbacks.forEach((ele, i) => res = ele(res));
   return res;
 }
 

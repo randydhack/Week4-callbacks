@@ -35,9 +35,8 @@ function multiMap(val, n, cb) {
 
   for (let i = 0; i < n; i++) {
     val = cb(val);
-    res = val
   }
-  return res
+  return val
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
