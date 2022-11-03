@@ -36,7 +36,40 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function mySimpleReduce(array, cb) {
   // Your code here
+  let previous = array[0];
+
+  for (let i = 1; i < array.length; i++) {
+    let current = array[i];
+    previous = cb(previous, current);
+  }
+  return previous;
 }
+
+//  let res =  array.reduce(function(el, i, array){
+//     cb(el, currentValue);
+//   });
+//   console.log(res)
+//   // return res;
+// }
+
+let result1 = mySimpleReduce([5, 3, 2, 4], function(sum, el) {
+  return sum + el;
+});
+console.log(result1); // 14
+
+let result2 = mySimpleReduce([4, 6, 2], function(product, el) {
+  return product * el;
+});
+console.log(result2); // 48
+
+let result3 = mySimpleReduce([4, 6, 2, 8, 3], function(max, el) {
+  if (el > max) {
+      return el;
+  } else {
+      return max;
+  }
+});
+console.log(result3); // 8
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
